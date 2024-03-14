@@ -8,6 +8,10 @@ new Waiter(mediator);
 new Chef(mediator);
 var visitor = new Visitor(mediator);
 var dinner = await visitor.GiveOrder(["Булочка с сосискою", "чай бутерброд", "иии и пряники то чаю", "и все!"]);
+foreach (var item in dinner.Dishes)
+{
+    Console.WriteLine(item.Name);
+}
 /*
 Visitor gave an order to waiter
 Waiter took an order from visitor
@@ -17,6 +21,10 @@ Chef Took an order from Waiter
 Chef Took an order from Waiter
 Waiter took dishes from chef
 Visitor took a dinner from waiter
+Булочка с сосискою
+чай бутерброд
+иии и пряники то чаю
+и все!
  */
 int counter = 1;
 

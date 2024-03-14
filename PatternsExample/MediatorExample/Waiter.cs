@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace PatternsExample.MediatorExample;
 
+public class Dinner
+{
+    public Dinner(IEnumerable<Food> dishes)
+    {
+        Dishes = dishes;
+    }
 
+    public IEnumerable<Food> Dishes { get; }
+}
 public record FoodRequest(IEnumerable<string> MenuPositions) : IRequest<Dinner> { }
 public class Waiter : IRequestHandler<FoodRequest, Dinner>
 {
